@@ -1,15 +1,83 @@
 # LaTeX Vorlage DHSN
 
-**20.08.1976**
-Auf Grundlage des aktuellen BAS-DD-Leitfaden zum wissenschaftlichen Arbeiten.
+**27.08.1985**
+Auf Grundlage des aktuellen BAS-DD-Leitfaden zum wissenschaftlichen Arbeiten der DHSN Dresden.
 Grundlagen für LaTeX siehe in Repository LaTeX.
-Danke an Marius Henker (3-IT24-2) und Louis Heinrich (3-IT23-1) für die Vorlage!
+Danke an Marius und Louis für die Vorlage!
 
 ## Benutzung:
 ### Umgebung einrichten.
 #### Editor:
-Am besten mit Overleaf, geht am einfachsten.
-Oder lokal, z.B. mit Visual Studio Code mit bspw. LaTeX Workshop, LTeX+, LaTeX, Overleaf Workshop, Paste Image oder so; VSC ist möglicherweise aber nicht die beste Wahl, gibt auch Alternativen, habe sie aber noch nicht ausprobiert
+Overleaf ist zwar die einfachste Methode, hat aber zum 25.08.2025 die Kompilierzeit verkürzt, sodass es möglich ist, dass das Projekt zu groß ist.
+Es gibt auch weitere TeX-Editoren, ich habe aktuell nur Visual Studio Code ausprobiert.
+
+##### Visual Studio Code - Setup
+- Download VSC
+- Download MiKTeX `https://miktex.org/` (hier wäre übrigens ein weitere Editor, "TeXworks", dabei)
+- In Visual Studio Code folgende Extensions herunterladen: "LaTeX Workshop", optional: "LTeX+" (Rehtschreibprüfung)
+- irgendwie die Fehler lösen
+
+Ich habe folgenden Code in `settings.json` kopiert. Damit wurden mir alle kompilierten Files in den ".output"-Ordner gelegt (wo dann auch die PDF ist) und der Arbeitsplatz bleibt gut sortiert. Außerdem wird gleich richtig mit biber kompiliert und so, das war auch ziemlich lustig.
+Aber Achtung: Möglicherweise funktioniert es auf anderen Systemen nicht oder kann Fehler verbergen.
+
+`"latex-workshop.latex.tools": [
+  {
+    "name": "pdflatex",
+    "command": "pdflatex",
+    "args": [
+      "-synctex=1",
+      "-interaction=nonstopmode",
+      "-file-line-error",
+      "-output-directory=.output",
+      "%DOC%"
+    ]
+  },
+  {
+  "name": "biber",
+  "command": "biber",
+  "args": [
+      "--input-directory=.output",
+      "--output-directory=.output",
+      "%DOCFILE%"
+  ]
+  }
+],
+"latex-workshop.latex.recipes": [
+  {
+    "name": "pdflatex - biber - pdflatex*2",
+    "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+  },
+  {
+    "name": "pdflatex only",
+    "tools": ["pdflatex"]
+  }
+],
+"latex-workshop.latex.autoBuild.run": "onSave",
+"ltex.additionalRules.motherTongue": "de-DE",
+"ltex.diagnosticSeverity": "information",
+"workbench.editorAssociations": {
+    "*.pdf": "latex-workshop-pdf-hook"
+},
+"latex-workshop.view.pdf.viewer":"tab",
+"latex-workshop.view.pdf.sidebar.view": null,
+"editor.wordWrap": "on",
+"latex-workshop.latex.outDir": ".output",
+"latex-workshop.latex.clean.enabled": true,
+"latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.bcf",
+    "*.blg",
+    "*.log",
+    "*.lof",
+    "*.lot",
+    "*.fls",
+    "*.fdb_latexmk",
+    "*.toc",
+    "*.synctex.gz"
+],
+"ltex.language": "de-DE"
+}`
 
 #### Zotero:
 - Download: https://www.zotero.org/
