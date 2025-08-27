@@ -185,7 +185,7 @@ Tipp: Ich habe den Befehl \az{Beispiel} eingefügt, um die Anführungszeichen \g
 > **Version: v0.1**   
 > **Datum: 09.07.2025**   
 > 
-> - Louis Heinrich (3IT23-1) - Original Template
-> - Marius Henker (3IT24-2) - Minor Changes and Documentation
+> - Louis - Original Template
+> - Marius - Minor Changes and Documentation
 > 
-> Kontakt: s3005647@edu.dhsn.de
+> Kontakt: s********@edu.dhsn.de
