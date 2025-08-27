@@ -1,0 +1,52 @@
+%Konfigurationsdatei für Angaben
+
+% Titel, Autor
+\setmytitle{Titel der Arbeit}
+\setmyauthor{Vorname Name}
+\setmyimmanr{s0000000}
+
+% Studienrichtung
+\setmyfos{Studienrichtung}
+% Studiengang
+\setmycos{Studiengang}
+
+% Datum der Themenübergabe
+\setmytsdate{Datum Themenübergabe}
+% Datum der Abgabe
+\setmysdate{Datum Abgabe}
+\setmyyear{\the\year} %für Links in der Fußnote
+
+%Semester
+\setmysemester{2}
+%Gutachter (mit Titel!)
+\setmyexpert{Vorname Nachname}
+
+% Anschrift der Firma (Ort wird auch für Unterschriften verwendet)
+\setmycompany{Beispiel GmbH}
+\setmystreet{Straße A 1}
+\setmyplz{01234}
+\setmylocation{Irgendwo} % Stadt
+
+% Ob Sperrvermerk, Abbildungsverzeichnis, Glossar, Abkürzungsverzeichnis verwendet werden(true heißt mit, false ohne)
+\setbool{blockingNotice}{false} %Sperrvermerk
+\setbool{lof}{true} %Abbildungsverzeichnis
+\setbool{glossary}{true} %Glossar
+\setbool{loacr}{true} %Abkürzungsverzeichnis
+
+% Aussehen der Verlinkungen und festlegen des Titels
+\hypersetup{
+    pdftitle        = {\mytitle},
+    pdfauthor       = {\myauthor},
+    pdfsubject		= {Belegarbeit an der Dualen Hochschule Sachsen},
+    pdfcenterwindow	= {true},
+    colorlinks		= {false}, %Links farbig malen
+    linkcolor		= {HKS44-100},
+    citecolor		= {HKS57-100},
+    filecolor		= {HKS07-100},
+    urlcolor		= {HKS44-100},
+}
+
+%eigene Kurzbefehle -----------------------------------------
+\newcommand{\az}[1]{\glqq{}#1\grqq{}} %Anführungszeichen
+
+\newcommand{\dhsn}{\ac{dhsn}} %Schreibfaul, automatisch "DHSN" geschrieben

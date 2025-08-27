@@ -1,0 +1,56 @@
+%Hauptdatei, von der LaTeX aus kompiliert
+\documentclass[a4paper, 12pt]{article} %so sieht PDF aus
+
+\input{config.tex} %config laden
+
+\input{einstellungen} %eigene Einstellungen laden
+
+% Literaturverzeichnisse hinzufügen
+\addbibresource{frontbackmatter/bib/literatur.bib}
+
+\ifbool{glossary}{\makeglossaries}
+
+\begin{document}
+
+\pagenumbering{Roman}
+\include{frontbackmatter/titelblatt}
+
+\setcounter{page}{2}
+
+\ifbool{blockingNotice} {
+    \include{frontbackmatter/sperrvermerk}
+}
+
+\include{frontbackmatter/inhaltsverzeichnis}
+
+\ifbool{lof}{
+\include{frontbackmatter/abbildungsverzeichnis}
+}
+
+\ifbool{loacr}{
+\include{frontbackmatter/abkuerzungsverzeichnis}}
+
+\ifbool{glossary}{
+\include{frontbackmatter/glossar}}
+
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Hier die Abschnitte einbinden
+\include{Kapitel/01 Kapitel 1}
+\include{Kapitel/02 Kapitel 2}
+
+\include{frontbackmatter/bib}
+
+% Hier Anhang Einfügen. Die Anhänge A,B,C... am besten in anhang.tex einbinden
+\input{frontbackmatter/anhaenge.tex}
+
+%!Achtung, keine Erwähnung im Leitfaden
+\ifbool{glossary}{
+\printglossaries
+}
+
+\include{frontbackmatter/eidesstattliche-erklärung}
+
+\end{document}

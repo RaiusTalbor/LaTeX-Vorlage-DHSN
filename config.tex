@@ -1,0 +1,272 @@
+%Konfigurationsdatei für Layout-Einstellungen
+
+%sehr viele Standard-Pakete
+\usepackage{graphicx} % für Einfügen Bilder
+\usepackage[utf8]{inputenc} %Zeichensatz
+\usepackage[ngerman]{babel} %Sprache
+\usepackage[T1]{fontenc} %Anpassung Zeichen
+\usepackage{times}
+\usepackage[style=authoryear, language=ngerman, dashed=false, backend=biber, defernumbers=true, maxcitenames=1, giveninits=true, uniquename=init]{biblatex}
+\usepackage{etoolbox}
+\usepackage{geometry} %Seitenmaße
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{acronym} %Abkürzungsverzeichnis
+\usepackage{glossaries} %Glossar [style=altlist] andere Darstellung
+\usepackage{csquotes}
+\usepackage{appendix} %Anhänge
+\usepackage[titles]{tocloft}
+\usepackage{tabularray}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{ragged2e}
+% \usepackage[all]{hypcap}  % Damit die Verlinkung auf das Bild und nicht auf die Unterschrift zeigt
+\usepackage{xparse}  % Notwendig für \IfNoValueF
+\usepackage{float}
+\usepackage{caption, subcaption}
+\usepackage{tikz}
+\usepackage{parskip}
+\usepackage{pdfpages} %PDF-Umgang, Layout, Einfügen, etc...
+% Paket laden, das das Zählen von Abbildungen und Tabellen ermöglicht
+\usepackage{totcount}
+
+% Farben definieren
+\definecolor{HKS41-100}{cmyk}{1.0, 0.7, 0.1, 0.5}
+\definecolor{HKS41-90}{cmyk}{0.9, 0.63, 0.09, 0.45}
+\definecolor{HKS41-80}{cmyk}{0.8, 0.56, 0.08, 0.4}
+\definecolor{HKS41-70}{cmyk}{0.7, 0.49, 0.07, 0.35}
+\definecolor{HKS41-60}{cmyk}{0.6, 0.42, 0.06, 0.3}
+\definecolor{HKS41-50}{cmyk}{0.5, 0.35, 0.05, 0.25}
+\definecolor{HKS41-40}{cmyk}{0.4, 0.28, 0.04, 0.2}
+\definecolor{HKS41-30}{cmyk}{0.3, 0.21, 0.03, 0.15}
+\definecolor{HKS41-20}{cmyk}{0.2, 0.14, 0.02, 0.1}
+\definecolor{HKS41-10}{cmyk}{0.1, 0.07, 0.01, 0.05}
+\definecolor{HKS44-100}{cmyk}{1.0, 0.5, 0.0, 0.0}
+\definecolor{HKS44-90}{cmyk}{0.9, 0.45, 0.0, 0.0}
+\definecolor{HKS44-80}{cmyk}{0.8, 0.4, 0.0, 0.0}
+\definecolor{HKS44-70}{cmyk}{0.7, 0.35, 0.0, 0.0}
+\definecolor{HKS44-60}{cmyk}{0.6, 0.3, 0.0, 0.0}
+\definecolor{HKS44-50}{cmyk}{0.5, 0.25, 0.0, 0.0}
+\definecolor{HKS44-40}{cmyk}{0.4, 0.2, 0.0, 0.0}
+\definecolor{HKS44-30}{cmyk}{0.3, 0.15, 0.0, 0.0}
+\definecolor{HKS44-20}{cmyk}{0.2, 0.1, 0.0, 0.0}
+\definecolor{HKS44-10}{cmyk}{0.1, 0.05, 0.0, 0.0}
+\definecolor{HKS36-100}{cmyk}{0.8, 0.9, 0.0, 0.0}
+\definecolor{HKS36-90}{cmyk}{0.72, 0.81, 0.0, 0.0}
+\definecolor{HKS36-80}{cmyk}{0.64, 0.72, 0.0, 0.0}
+\definecolor{HKS36-70}{cmyk}{0.56, 0.63, 0.0, 0.0}
+\definecolor{HKS36-60}{cmyk}{0.48, 0.54, 0.0, 0.0}
+\definecolor{HKS36-50}{cmyk}{0.4, 0.45, 0.0, 0.0}
+\definecolor{HKS36-40}{cmyk}{0.32, 0.36, 0.0, 0.0}
+\definecolor{HKS36-30}{cmyk}{0.24, 0.27, 0.0, 0.0}
+\definecolor{HKS36-20}{cmyk}{0.16, 0.18, 0.0, 0.0}
+\definecolor{HKS36-10}{cmyk}{0.08, 0.09, 0.0, 0.0}
+\definecolor{HKS33-100}{cmyk}{0.5, 1.0, 0.0, 0.0}
+\definecolor{HKS33-90}{cmyk}{0.45, 0.9, 0.0, 0.0}
+\definecolor{HKS33-80}{cmyk}{0.4, 0.8, 0.0, 0.0}
+\definecolor{HKS33-70}{cmyk}{0.35, 0.7, 0.0, 0.0}
+\definecolor{HKS33-60}{cmyk}{0.3, 0.6, 0.0, 0.0}
+\definecolor{HKS33-50}{cmyk}{0.25, 0.5, 0.0, 0.0}
+\definecolor{HKS33-40}{cmyk}{0.2, 0.4, 0.0, 0.0}
+\definecolor{HKS33-30}{cmyk}{0.15, 0.3, 0.0, 0.0}
+\definecolor{HKS33-20}{cmyk}{0.1, 0.2, 0.0, 0.0}
+\definecolor{HKS33-10}{cmyk}{0.05, 0.1, 0.0, 0.0}
+\definecolor{HKS57-100}{cmyk}{1.0, 0.0, 0.9, 0.2}
+\definecolor{HKS57-90}{cmyk}{0.9, 0.0, 0.81, 0.18}
+\definecolor{HKS57-80}{cmyk}{0.8, 0.0, 0.72, 0.16}
+\definecolor{HKS57-70}{cmyk}{0.7, 0.0, 0.63, 0.14}
+\definecolor{HKS57-60}{cmyk}{0.6, 0.0, 0.54, 0.12}
+\definecolor{HKS57-50}{cmyk}{0.5, 0.0, 0.45, 0.1}
+\definecolor{HKS57-40}{cmyk}{0.4, 0.0, 0.36, 0.08}
+\definecolor{HKS57-30}{cmyk}{0.3, 0.0, 0.27, 0.06}
+\definecolor{HKS57-20}{cmyk}{0.2, 0.0, 0.18, 0.04}
+\definecolor{HKS57-10}{cmyk}{0.1, 0.0, 0.09, 0.02}
+\definecolor{HKS65-100}{cmyk}{0.65, 0.0, 1.0, 0.0}
+\definecolor{HKS65-90}{cmyk}{0.585, 0.0, 0.9, 0.0}
+\definecolor{HKS65-80}{cmyk}{0.52, 0.0, 0.8, 0.0}
+\definecolor{HKS65-70}{cmyk}{0.455, 0.0, 0.7, 0.0}
+\definecolor{HKS65-60}{cmyk}{0.39, 0.0, 0.6, 0.0}
+\definecolor{HKS65-50}{cmyk}{0.325, 0.0, 0.5, 0.0}
+\definecolor{HKS65-40}{cmyk}{0.26, 0.0, 0.4, 0.0}
+\definecolor{HKS65-30}{cmyk}{0.195, 0.0, 0.3, 0.0}
+\definecolor{HKS65-20}{cmyk}{0.13, 0.0, 0.2, 0.0}
+\definecolor{HKS65-10}{cmyk}{0.065, 0.0, 0.1, 0.0}
+\definecolor{HKS07-100}{cmyk}{0.0, 0.6, 1.0, 0.0}
+\definecolor{HKS07-90}{cmyk}{0.0, 0.54, 0.9, 0.0}
+\definecolor{HKS07-80}{cmyk}{0.0, 0.48, 0.8, 0.0}
+\definecolor{HKS07-70}{cmyk}{0.0, 0.42, 0.7, 0.0}
+\definecolor{HKS07-60}{cmyk}{0.0, 0.36, 0.6, 0.0}
+\definecolor{HKS07-50}{cmyk}{0.0, 0.3, 0.5, 0.0}
+\definecolor{HKS07-40}{cmyk}{0.0, 0.24, 0.4, 0.0}
+\definecolor{HKS07-30}{cmyk}{0.0, 0.18, 0.3, 0.0}
+\definecolor{HKS07-20}{cmyk}{0.0, 0.12, 0.2, 0.0}
+\definecolor{HKS07-10}{cmyk}{0.0, 0.06, 0.1, 0.0}
+\definecolor{HKS14-100}{cmyk}{0.0, 1.0, 1.0, 0.0}
+
+% Befehle zum Setzen von Daten
+\newcommand{\setmyimmanr}[1]{\newcommand{\myimmanr}{#1}}
+\newcommand{\setmytitle}[1]{\newcommand{\mytitle}{#1}}
+\newcommand{\setmyauthor}[1]{\newcommand{\myauthor}{#1}}
+\newcommand{\setmysemester}[1]{\newcommand{\mysemester}{#1. Semester}}
+\newcommand{\setmyexpert}[1]{\newcommand{\myexpert}{#1}}
+\newcommand{\setmytsdate}[1]{\newcommand{\mytsdate}{#1}}
+\newcommand{\setmysdate}[1]{\newcommand{\mysdate}{#1}}
+\newcommand{\setmyyear}[1]{\newcommand{\myyear}{#1}}
+\newcommand{\setmylocation}[1]{\newcommand{\mylocation}{#1}}
+\newcommand{\setmycompany}[1]{\newcommand{\mycompany}{#1}}
+\newcommand{\setmyplz}[1]{\newcommand{\myplz}{#1}}
+\newcommand{\setmystreet}[1]{\newcommand{\mystreet}{#1}}
+\newcommand{\setmyfos}[1]{\newcommand{\myfos}{#1}}
+\newcommand{\setmycos}[1]{\newcommand{\mycos}{#1}}
+\newbool{blockingNotice}
+\newbool{lof}
+\newbool{glossary}
+\newbool{loacr}
+
+% Einstellen des Layouts gemäß des Leitfadens
+\newgeometry{
+left=30mm,
+right=20mm,
+bottom=20mm,
+top=20mm,
+includefoot
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+% Entferne die Kopfzeile
+\renewcommand{\headrulewidth}{0pt}
+% Seitenzahl 1 cm über dem Seitenrand platzieren
+\setlength{\footskip}{1cm}
+\pagenumbering{Roman}
+\fancyfoot[R]{\thepage}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+\emergencystretch=1em
+
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map[overwrite=false]{
+      \step[fieldset=date,origfieldval,final]
+      \step[fieldset=eventdate,origfieldval,final]
+      \step[fieldset=origdate,origfieldval,final]
+      \step[fieldset=urldate,origfieldval,final]
+      \step[fieldset=eventyear,origfieldval,final]
+      \step[fieldset=origyear,origfieldval,final]
+      \step[fieldset=urlyear,origfieldval,final]
+      \step[fieldset=year,fieldvalue={o.J.},final]
+      \step[fieldset=sortyear,fieldvalue={0000}]
+    }
+  }
+}
+
+\DeclareLabeldate{
+  \field{year}
+  \literal{o.J.}
+}
+
+\defbibheading{custom}{
+  \section*{Literaturverzeichnis}
+}
+
+\ifbool{glossary}{
+\makeglossaries
+}
+
+% Abstand der Punkte im Inhaltsverzeichnis
+\renewcommand{\cftdotsep}{2}
+
+%Literaturverzeichnis---
+
+%Kein Blocksatz, sondern rechtsbündig im Literaturverzeihnis --> lange Links nicht aus Feld
+\renewcommand*{\bibfont}{\raggedright}
+
+% Namen in Nachname, Vorname formatieren
+\DeclareNameAlias{sortname}{family-given} % Für sortierte Namen
+\DeclareNameAlias{default}{family-given} % Für Standardanzeige
+
+% "und" statt "and"
+\DefineBibliographyExtras{ngerman}{
+  \renewcommand*{\finalnamedelim}{\addspace und\addspace} % Setzt "und" vor dem letzten Autor
+}
+%"et al" statt "u.a."
+\DefineBibliographyStrings{ngerman}{
+  andothers = {et al\adddot}
+}
+
+%Buch-Quellen im Literaturverzeichnis Formatanpassung, was ausgegeben soll und wie
+\DeclareBibliographyDriver{book}{%
+  \printnames{author}% hier z.B. den Autor
+  \setunit{\space}% hier ein Leerzeichen
+  \printtext[parens]{\printfield{year}}% in Klammern Jahr usw.
+  \setunit{\addcolon\space}% Doppelpunkt
+  \printfield[titlecase]{title}%
+  \setunit{\adddot\space}%
+  \printfield{subtitle}%
+  \newunit\newblock
+  \printfield{volume}%
+  \setunit{\addcomma\space}%
+  \printfield{series}%
+  \newunit\newblock
+  \printfield{edition}%
+  \iffieldundef{edition}{}{.\addspace Aufl.}%
+  \newunit\newblock
+  \printlist{location}%
+  \finentry
+}
+
+%Aussehen der URLs
+%\DeclareFieldFormat{url}{in: \url{#1}} %Links in Monospace-Schriftart
+\DeclareFieldFormat{url}{in: \textnormal{#1}} %normale Schriftart
+\DeclareFieldFormat[online]{title}{#1}  %kein \mkbibemph, also nicht kursiv
+\DeclareFieldFormat[article]{title}{#1} %kein kursiv
+\DeclareFieldFormat[misc]{title}{#1} %auch hier kein kursiv
+\DeclareFieldFormat{urldate}{(#1)}
+\renewbibmacro*{url+urldate}{%
+  \printfield{url}%
+  \setunit*{\addcomma\space}%
+  \printurldate%
+}
+%Hinweis: Die Farben können unter einstellungen.tex --> hypersetup angepasst werden
+
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldset=language, null]
+      \step[fieldset=langid, null]
+    }
+  }
+}
+
+%---
+
+% Hiermit werden die Zähler für figure und table registriert
+\regtotcounter{figure}
+\regtotcounter{table}
+
+
+%Zitierbefehle----------------------------------
+
+%geht auch mit anderen Quellen, aber nur bei Quellen mit year in bib-Datei
+%  {\footnote{Vgl. \printtext{\citeauthor{#1}, \mkbibinit{\citeauthor{#1}}. (\citeyear{#1})%
+\NewDocumentCommand{\fn}{O{} m O{} O{}}
+  {\footnote{#1 \space \citeauthor{#2}\ifblank{#3}{}{, #3.} (\citeyear{#2})%
+  \ifblank{#4}{.}{, S.~#4.}}}
+
+%für Links mit FESTEN Zugriffsjahr (meistens das gleiche Jahr wie schreiben der Arbeit
+
+\NewDocumentCommand{\fnlink}{O{} m O{} O{}}
+  {\footnote{#1 \space \citeauthor{#2}\ifblank{#3}{}{, #3.} (Zugriffsjahr: \myyear)%
+  \ifblank{#4}{.}{, S.~#4.}}}
+  
+%selbe Befehl wie die Zitierbefehle, aber gibt die Quelle im Fließtext an, statt sie in die Fußnote zu schreiben
+\NewDocumentCommand{\quelle}{O{} m O{} O{}}
+  {#1 \citeauthor{#2}\ifblank{#3}{}{, #3.} (\citeyear{#2})%
+  \ifblank{#4}{.}{, S.~#4.}}
+
+%Äquivalent zu fnlink
+\NewDocumentCommand{\quellelink}{O{} m O{} O{}}
+  {#1 \citeauthor{#2}\ifblank{#3}{}{, #3.} (Zugriffsjahr: \myyear)%
+  \ifblank{#4}{.}{, S.~#4.}}

@@ -1,0 +1,37 @@
+\newcommand{\listappendixname}{Anhangsverzeichnis}
+\newlistof{appendix}{app}{\listappendixname}
+\setcounter{appdepth}{2}    
+\renewcommand{\theappendix}{\Alph{appendix}}
+\renewcommand{\cftappendixpresnum}{Anhang\space}
+\setlength{\cftbeforeappendixskip}{\baselineskip}
+\setlength{\cftappendixnumwidth}{1in}
+
+\newcommand{\myappendix}[1]{%
+  \refstepcounter{appendix}%
+  \section*{Anhang \theappendix : \space #1}%
+  \addcontentsline{app}{appendix}{\protect\numberline{\theappendix} #1}%
+  \par
+}
+
+\newpage
+\phantomsection
+% Falls Seitenzahlen im Anhang vom Leitfaden abweichen dürfen. Mit Betreuer besprechen
+% \ifbool{appendixRomanPageNumbers}{
+%   \setcounter{page}{1}
+%   \pagenumbering{roman}
+% }
+\vspace*{\fill}
+\thispagestyle{empty}
+\begin{center}
+  \Huge \textbf{Anhang}
+  \addcontentsline{toc}{section}{Anhang}
+\end{center}
+\vspace*{\fill}
+\newpage
+
+\listofappendix
+\addcontentsline{toc}{section}{Anhangsverzeichnis}
+\clearpage
+
+% Anhänge hier einfügen
+\include{Kapitel/A Interview}

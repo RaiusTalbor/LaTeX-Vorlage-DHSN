@@ -1,0 +1,31 @@
+\section{Kapitel 1}
+So kann man Abkürzungen referenzieren: \ac{dhsn}.\\
+Zweite Referenzierung: \ac{dhsn} \\
+Und dritte: \dhsn %siehe einstellungen.tex
+
+%Außerdem ist es möglich, folgendermaßen zu zitieren\vgl{psgithub}. Oder auch mit Seitenzahl\vgl[2]{lipp}. Mit vgl.
+
+Fußnoten-------------------------------
+
+Hier ist eine Demonstration von fn mit Vortext, Anfangsbuchstaben und Seitenzahl\fn[Vgl.]{lipp}[M][6].
+
+Hier ohne Vortext und Seitenzahl\fn{lipp}[M].
+
+Hier am Beispiel eines Internetlinks ohne Vortext und ohne Anfangsbuchstabe \fn{psgithub}[][66]. %oder beides weg
+
+Hier ist fnlink ohne Vortext, Seitenzahl und Anfangsbuchstaben \fnlink[]{mc-test}.
+
+Es geht auch Footnote \footnote{Hier steht ein Text ganz unten.} für Texte unten.
+
+So kann man Quellen im Text angeben: quelle: \quelle[Kapitel]{lipp}[M][6]. Die Syntax ist dabei identisch mit fn. Dies benötigt man beispielsweise in Bildunterschriften.
+
+quellelink geht natürlich auch: \quellelink{psgithub}
+
+--------------------------------------
+
+\ifbool{glossary}{
+Demonstration des Glossars: \gls{repo}
+}
+
+%Das folgende ist veraltet. Geht, aber nicht Leitfaden-konform.
+%Für direkte Zitate, kann man die eingebaute Funktion Footcite \footcite[2]{psgithub} benutzen.
